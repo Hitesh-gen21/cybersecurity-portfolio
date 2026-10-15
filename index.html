@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beginner cybersecurity portfolio showcasing SOC, network security, detection engineering, and research labs.">
+  <title>Cybersecurity Portfolio | Your Name</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#121a2d; --text:#edf2ff; --muted:#aab6d3; --accent:#61e6c4; --line:#27334e; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .wrap { width:min(1060px,92%); margin:auto; }
+    header { position:sticky; top:0; background:rgba(11,16,32,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(10px); z-index:2; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 0; flex-wrap:wrap; }
+    .brand { font-weight:800; letter-spacing:.4px; color:var(--text); }
+    .links { display:flex; gap:18px; flex-wrap:wrap; font-size:.94rem; }
+    .hero { padding:82px 0 64px; display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; }
+    .eyebrow { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:.78rem; }
+    h1 { font-size:clamp(2.3rem,6vw,4.4rem); line-height:1.05; margin:12px 0 20px; }
+    h2 { font-size:2rem; margin:0 0 12px; }
+    h3 { margin:0 0 8px; }
+    p { color:var(--muted); }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+    .btn { display:inline-block; padding:11px 16px; border:1px solid var(--accent); border-radius:9px; font-weight:700; }
+    .primary { background:var(--accent); color:#07131b; }
+    .terminal { background:#080d18; border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:0 20px 60px #0003; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .terminal .green { color:var(--accent); }
+    section { padding:54px 0; border-top:1px solid var(--line); }
+    .section-intro { max-width:720px; margin-bottom:26px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; }
+    .tag { display:inline-block; border:1px solid #34516a; color:#c8d8ee; border-radius:999px; padding:3px 9px; margin:5px 5px 0 0; font-size:.8rem; }
+    ul { color:var(--muted); padding-left:20px; }
+    .status { font-size:.78rem; color:var(--accent); text-transform:uppercase; letter-spacing:1px; font-weight:800; }
+    .contact { display:flex; gap:16px; flex-wrap:wrap; }
+    footer { padding:24px 0 38px; color:var(--muted); font-size:.9rem; }
+    @media (max-width:700px) { .hero { grid-template-columns:1fr; padding-top:56px; } .grid { grid-template-columns:1fr; } .links { gap:11px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#home">YOUR NAME / CYBERSECURITY</a>
+      <div class="links">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#learning">Learning</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Entry-level cybersecurity portfolio</div>
+        <h1>Learning security.<br>Building practical labs.</h1>
+        <p>I'm an aspiring cybersecurity professional interested in SOC monitoring, network troubleshooting, vulnerability assessment, and security detection. This website documents my hands-on practice, research, and lessons learned.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my projects</a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Terminal-style introduction">
+        <div><span class="green">$</span> whoami</div>
+        <p>Cybersecurity learner</p>
+        <div><span class="green">$</span> focus --areas</div>
+        <p>SIEM • Logs • Networking • VAPT</p>
+        <div><span class="green">$</span> current-status</div>
+        <p>Building and documenting safe lab projects…</p>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About me</h2>
+        <p class="section-intro">I am developing practical skills in cybersecurity through controlled lab environments, structured testing, and documentation. I value clear evidence, repeatable steps, and honest reporting of results.</p>
+        <div class="grid">
+          <div class="card"><h3>What I'm working toward</h3><p>Entry-level SOC Analyst, Security Operations, or VAPT opportunities.</p></div>
+          <div class="card"><h3>How I work</h3><p>Define the objective, configure a safe lab, run a test, review the evidence, and document the outcome and limitations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2>Skills & tools</h2>
+        <p class="section-intro">Only list a skill as “hands-on” when you can explain and demonstrate it. Update this section as you complete each lab.</p>
+        <div class="card">
+          <span class="tag">TCP/IP fundamentals</span><span class="tag">OSI model</span><span class="tag">DNS / HTTP / TLS basics</span>
+          <span class="tag">Linux command line</span><span class="tag">Windows basics</span><span class="tag">Log analysis</span>
+          <span class="tag">Wazuh (lab practice)</span><span class="tag">Sigma (rule experiments)</span><span class="tag">Docker</span>
+          <span class="tag">Python fundamentals</span><span class="tag">Vulnerability assessment concepts</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects & labs</h2>
+        <p class="section-intro">These are starter project descriptions. Change each status and add screenshots, commands, logs, and results only after you have verified them.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="status">Lab project • Update status</div>
+            <h3>1. Wazuh Log Monitoring Lab</h3>
+            <p><strong>Objective:</strong> Practice collecting host/application logs and checking whether events appear in a SIEM dashboard.</p>
+            <p><strong>Tools:</strong> Wazuh, Ubuntu, application logs.</p>
+            <p><strong>Evidence to add:</strong> Agent status, log-source configuration, a harmless test log entry, dashboard event or troubleshooting output.</p>
+            <p><strong>Learning:</strong> Log collection, agent connectivity, and basic event investigation.</p>
+            <span class="tag">SOC</span><span class="tag">SIEM</span><span class="tag">Logs</span>
+          </article>
+          <article class="card">
+            <div class="status">Lab project • Update status</div>
+            <h3>2. Sigma Detection Rule Experiments</h3>
+            <p><strong>Objective:</strong> Understand the structure of Sigma rules and investigate whether a rule can be converted to a supported backend.</p>
+            <p><strong>Tools:</strong> Sigma YAML rules and a test environment.</p>
+            <p><strong>Evidence to add:</strong> Rule YAML, validation output, conversion result, and any compatibility issue encountered.</p>
+            <p><strong>Learning:</strong> Detection logic, rule fields, and backend compatibility.</p>
+            <span class="tag">Detection engineering</span><span class="tag">Sigma</span>
+          </article>
+          <article class="card">
+            <div class="status">Controlled lab • Update status</div>
+            <h3>3. Rails Security Logging Lab</h3>
+            <p><strong>Objective:</strong> Observe application logs during controlled security tests in an isolated local lab.</p>
+            <p><strong>Tools:</strong> Docker, Ruby on Rails, application logs, monitoring tools.</p>
+            <p><strong>Evidence to add:</strong> Lab architecture, test authorization/scope, harmless test request, resulting log line, and analysis.</p>
+            <p><strong>Safety:</strong> Keep testing local and authorized; do not expose a vulnerable service publicly.</p>
+            <span class="tag">Application security</span><span class="tag">Docker</span>
+          </article>
+          <article class="card">
+            <div class="status">Research project • In progress if applicable</div>
+            <h3>4. AI-Based Windows Anomaly Detection</h3>
+            <p><strong>Objective:</strong> Reproduce the methods described in the EI 2020 research paper using the paper's stated data and model details.</p>
+            <p><strong>Tools:</strong> Python, Jupyter Notebook, NumPy, and the research dataset.</p>
+            <p><strong>Evidence to add:</strong> Dataset source, preprocessing steps, model architecture, training settings, and results compared with the paper.</p>
+            <p><strong>Important:</strong> Clearly label any reproduction gap; do not claim paper-level reproduction until the method and results are verified.</p>
+            <span class="tag">Python</span><span class="tag">Autoencoder</span><span class="tag">Research</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="wrap">
+        <h2>Learning roadmap</h2>
+        <div class="grid">
+          <div class="card"><h3>01 — Networking</h3><p>Practice IP addressing, ports, DNS, TCP/UDP, HTTP/HTTPS, routing, and packet troubleshooting.</p></div>
+          <div class="card"><h3>02 — SOC fundamentals</h3><p>Read logs, identify timestamps and source systems, triage alerts, and write concise incident notes.</p></div>
+          <div class="card"><h3>03 — Detection & VAPT</h3><p>Learn detection-rule structure and perform authorized scans/tests in intentionally vulnerable local labs.</p></div>
+          <div class="card"><h3>04 — Document evidence</h3><p>For every project, record the goal, setup, exact steps, expected result, observed result, screenshots, and limitations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Replace the example links below with your real professional profiles. Do not publish private phone numbers or personal details unless you want them public.</p>
+        <div class="contact">
+          <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub profile</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn profile</a>
+          <a class="btn" href="mailto:your.email@example.com">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">© <span id="year"></span> YOUR NAME · Built for learning and professional project documentation.</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
