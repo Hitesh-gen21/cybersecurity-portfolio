@@ -3,168 +3,517 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Beginner cybersecurity portfolio showcasing SOC, network security, detection engineering, and research labs.">
+  <meta name="description" content="Cybersecurity Portfolio of Hitesh Kumar - SOC Analyst, Network Security Engineer, and Security Detection Practitioner.">
   <title>Cybersecurity Portfolio | Hitesh Kumar</title>
   <style>
-    :root { --bg:#0b1020; --panel:#121a2d; --text:#edf2ff; --muted:#aab6d3; --accent:#61e6c4; --line:#27334e; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
-    a { color:var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .wrap { width:min(1060px,92%); margin:auto; }
-    header { position:sticky; top:0; background:rgba(11,16,32,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(10px); z-index:2; }
-    nav { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 0; flex-wrap:wrap; }
-    .brand { font-weight:800; letter-spacing:.4px; color:var(--text); }
-    .links { display:flex; gap:18px; flex-wrap:wrap; font-size:.94rem; }
-    .hero { padding:82px 0 64px; display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; }
-    .eyebrow { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:.78rem; }
-    h1 { font-size:clamp(2.3rem,6vw,4.4rem); line-height:1.05; margin:12px 0 20px; }
-    h2 { font-size:2rem; margin:0 0 12px; }
-    h3 { margin:0 0 8px; }
-    p { color:var(--muted); }
-    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
-    .btn { display:inline-block; padding:11px 16px; border:1px solid var(--accent); border-radius:9px; font-weight:700; }
-    .primary { background:var(--accent); color:#07131b; }
-    .terminal { background:#080d18; border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:0 20px 60px #0003; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
-    .terminal .green { color:var(--accent); }
-    section { padding:54px 0; border-top:1px solid var(--line); }
-    .section-intro { max-width:720px; margin-bottom:26px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-    .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; }
-    .tag { display:inline-block; border:1px solid #34516a; color:#c8d8ee; border-radius:999px; padding:3px 9px; margin:5px 5px 0 0; font-size:.8rem; }
-    ul { color:var(--muted); padding-left:20px; }
-    .status { font-size:.78rem; color:var(--accent); text-transform:uppercase; letter-spacing:1px; font-weight:800; }
-    .contact { display:flex; gap:16px; flex-wrap:wrap; }
-    footer { padding:24px 0 38px; color:var(--muted); font-size:.9rem; }
-    @media (max-width:700px) { .hero { grid-template-columns:1fr; padding-top:56px; } .grid { grid-template-columns:1fr; } .links { gap:11px; } }
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2d;
+      --panel-hover: #17223b;
+      --text: #edf2ff;
+      --muted: #aab6d3;
+      --accent: #61e6c4;
+      --accent-glow: rgba(97, 230, 196, 0.15);
+      --line: #27334e;
+      --success: #34d399;
+      --badge-bg: #1c2a44;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1100px, 92%); margin: auto; }
+    
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 16, 32, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.94rem; }
+    .links a { color: var(--text); font-weight: 500; }
+    .links a:hover { color: var(--accent); text-decoration: none; }
+    
+    .hero {
+      padding: 80px 0 64px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+    }
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      margin: 12px 0 18px;
+      font-weight: 800;
+    }
+    h2 { font-size: 2rem; margin: 0 0 12px; font-weight: 700; }
+    h3 { margin: 0 0 8px; font-size: 1.25rem; }
+    p { color: var(--muted); margin: 0 0 16px; }
+    .hero-meta {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .primary { background: var(--accent); color: #07131b; }
+    .primary:hover { background: #4fd1b0; text-decoration: none; transform: translateY(-1px); }
+    .secondary:hover { background: var(--accent-glow); text-decoration: none; transform: translateY(-1px); }
+    
+    .terminal {
+      background: #080d18;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.88rem;
+    }
+    .terminal-header {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #10b981; }
+    .terminal .cmd { color: var(--accent); font-weight: 600; }
+    .terminal p { margin: 4px 0 12px; color: #cbd5e1; }
+    
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    .section-intro { max-width: 760px; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: #3b4e75;
+      background: var(--panel-hover);
+    }
+    .card h3 { color: var(--text); }
+    .tag {
+      display: inline-block;
+      background: var(--badge-bg);
+      border: 1px solid #34516a;
+      color: #c8d8ee;
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin: 6px 6px 0 0;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    ul { color: var(--muted); padding-left: 20px; margin: 8px 0; }
+    li { margin-bottom: 6px; }
+    
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: rgba(97, 230, 196, 0.08);
+      padding: 3px 9px;
+      border-radius: 4px;
+      border: 1px solid rgba(97, 230, 196, 0.2);
+    }
+    .status.completed {
+      color: var(--success);
+      background: rgba(52, 211, 153, 0.1);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .exp-role { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .exp-period { font-size: 0.82rem; color: var(--accent); font-weight: 600; }
+    .exp-org { color: #94a3b8; font-size: 0.92rem; margin-bottom: 10px; }
+    
+    .contact { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+    footer {
+      padding: 32px 0 42px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding-top: 50px; }
+      .grid { grid-template-columns: 1fr; }
+      .links { gap: 14px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
   <header>
     <nav class="wrap">
-      <a class="brand" href="#home">YOUR NAME / CYBERSECURITY</a>
+      <a class="brand" href="#home">
+        HITESH KUMAR
+        <span class="brand-badge">SOC & Security</span>
+      </a>
       <div class="links">
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#learning">Learning</a><a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <div class="wrap hero" id="home">
       <div>
-        <div class="eyebrow">Entry-level cybersecurity portfolio</div>
-        <h1>Learning security.<br>Building practical labs.</h1>
-        <p>I'm an aspiring cybersecurity professional interested in SOC monitoring, network troubleshooting, vulnerability assessment, and security detection. This website documents my hands-on practice, research, and lessons learned.</p>
+        <div class="eyebrow">Cybersecurity &bull; SOC Analyst &bull; Network Security</div>
+        <h1>Defending Networks.<br>Engineering Detections.</h1>
+        <p>MCA graduate with hands-on cyber security experience across C-DAC Mohali and THINKNEXT Technologies. Skilled in SIEM log monitoring (Splunk, ELK, Wazuh), packet analysis, network infrastructure (routers, switches, Cisco Packet Tracer), and AI-driven cyberattack anomaly detection.</p>
+        
+        <div class="hero-meta">
+          <span>📍 Kangra, Himachal Pradesh, India</span>
+          <span>💼 SOC Analyst Intern @ C-DAC Mohali</span>
+        </div>
+
         <div class="actions">
-          <a class="btn primary" href="#projects">Explore my projects</a>
-          <a class="btn" href="#contact">Contact me</a>
+          <a class="btn primary" href="#projects">Explore My Projects (5)</a>
+          <a class="btn secondary" href="#experience">View Experience</a>
+          <a class="btn secondary" href="#contact">Get In Touch</a>
         </div>
       </div>
-      <div class="terminal" aria-label="Terminal-style introduction">
-        <div><span class="green">$</span> whoami</div>
-        <p>Cybersecurity learner</p>
-        <div><span class="green">$</span> focus --areas</div>
-        <p>SIEM • Logs • Networking • VAPT</p>
-        <div><span class="green">$</span> current-status</div>
-        <p>Building and documenting safe lab projects…</p>
+
+      <div class="terminal" aria-label="Terminal introduction">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div><span class="cmd">$</span> whoami</div>
+        <p>Hitesh Kumar (MCA | Cybersecurity &amp; SOC Analyst)</p>
+        <div><span class="cmd">$</span> cat skills_focus.txt</div>
+        <p>SIEM (Splunk, ELK, Wazuh) &bull; Wireshark &bull; Cisco Networking &bull; VAPT &bull; Autoencoders</p>
+        <div><span class="cmd">$</span> current_role --status</div>
+        <p>SOC Intern @ C-DAC Mohali &bull; Analysing Logs &amp; Incident Triage</p>
       </div>
     </div>
 
+    <!-- ABOUT SECTION -->
     <section id="about">
       <div class="wrap">
-        <h2>About me</h2>
-        <p class="section-intro">I am developing practical skills in cybersecurity through controlled lab environments, structured testing, and documentation. I value clear evidence, repeatable steps, and honest reporting of results.</p>
+        <h2>About Me</h2>
+        <p class="section-intro">I am an MCA graduate committed to building strong, practical foundations in threat monitoring, incident response, network architecture, and security automation. With a professional background in 24x7 telecom network operations and practical internships in SOC and vulnerability assessment, I bring structured troubleshooting and evidence-based rigor to cybersecurity.</p>
         <div class="grid">
-          <div class="card"><h3>What I'm working toward</h3><p>Entry-level SOC Analyst, Security Operations, or VAPT opportunities.</p></div>
-          <div class="card"><h3>How I work</h3><p>Define the objective, configure a safe lab, run a test, review the evidence, and document the outcome and limitations.</p></div>
+          <div class="card">
+            <h3>Target Roles &amp; Aspirations</h3>
+            <p>Targeting opportunities as an <strong>L1/L2 SOC Analyst</strong>, <strong>Security Operations Engineer</strong>, <strong>Network Security Specialist</strong>, or <strong>Detection Engineer</strong> where I can apply real-time log triage, rule engineering, and traffic inspection.</p>
+          </div>
+          <div class="card">
+            <h3>Methodology &amp; Work Ethic</h3>
+            <p>Define clear objectives, architect isolated lab testbeds, simulate realistic adversary behavior, capture repeatable telemetry, and validate findings against industry benchmarks and standard operating procedures (SOPs).</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- WORK EXPERIENCE SECTION (FROM RESUME) -->
+    <section id="experience">
+      <div class="wrap">
+        <h2>Professional Experience</h2>
+        <p class="section-intro">Hands-on technical background spanning security operations centres, telecom network engineering, and cybersecurity research.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="exp-header">
+              <span class="exp-role">Cybersecurity / SOC Analyst Intern</span>
+              <span class="exp-period">Aug 2026 – Feb 2027</span>
+            </div>
+            <div class="exp-org">Centre for Development of Advanced Computing (C-DAC), Mohali</div>
+            <ul>
+              <li>Monitoring security events and alerts in an active Security Operations Centre (SOC) environment, performing initial triage and escalation.</li>
+              <li>Analysing logs and network traffic with SIEM and packet-analysis tools to detect anomalies, suspicious behavior, and IOCs.</li>
+              <li>Writing Python and Linux shell scripts to automate monitoring routines, log-parsing, data pipelines, and reporting tasks.</li>
+              <li>Documenting security findings, incident analysis, and structured standard operating procedures (SOPs).</li>
+            </ul>
+            <span class="tag">SOC</span><span class="tag">SIEM (Splunk, ELK)</span><span class="tag">Log Analysis</span><span class="tag">Python</span>
+          </div>
+
+          <div class="card">
+            <div class="exp-header">
+              <span class="exp-role">Network Engineer</span>
+              <span class="exp-period">Aug 2025 – Oct 2025</span>
+            </div>
+            <div class="exp-org">DKPL Networks Pvt. Ltd. (Airtel Mobile Switching Centre)</div>
+            <ul>
+              <li>Configured, maintained, and troubleshot enterprise routers and switches supporting critical telecom infrastructure with minimal downtime.</li>
+              <li>Monitored network performance and resolved faults across rotational 24x7 shifts.</li>
+              <li>Coordinated directly with Airtel's core network engineering team on SLA compliance and rapid incident resolution.</li>
+            </ul>
+            <span class="tag">Routers &amp; Switches</span><span class="tag">Telecom MSC</span><span class="tag">24x7 Operations</span><span class="tag">SLA Management</span>
+          </div>
+
+          <div class="card">
+            <div class="exp-header">
+              <span class="exp-role">Cybersecurity Intern</span>
+              <span class="exp-period">Mar 2024 – Sep 2024</span>
+            </div>
+            <div class="exp-org">THINKNEXT Technologies</div>
+            <ul>
+              <li>Monitored and analysed network traffic using Wireshark to identify potential security threats and abnormal packet streams.</li>
+              <li>Conducted vulnerability assessments using Metasploit and scanning tools; reported findings and prioritized remediation.</li>
+              <li>Assisted in implementing foundational baseline security controls and antivirus protections across systems.</li>
+              <li>Documented security incidents and authored standard operating procedures for recurring threats.</li>
+            </ul>
+            <span class="tag">Wireshark</span><span class="tag">Metasploit</span><span class="tag">VAPT</span><span class="tag">Traffic Analysis</span>
+          </div>
+
+          <div class="card">
+            <div class="exp-header">
+              <span class="exp-role">Project Coordinator</span>
+              <span class="exp-period">Oct 2025 – Apr 2026</span>
+            </div>
+            <div class="exp-org">Udayasa Foundation</div>
+            <ul>
+              <li>Coordinated project activities, schedules, and deliverables across cross-functional teams and stakeholders.</li>
+              <li>Strengthened professional communication, team collaboration, and structured technical documentation skills.</li>
+            </ul>
+            <span class="tag">Project Management</span><span class="tag">Documentation</span><span class="tag">Team Leadership</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
     <section id="skills">
       <div class="wrap">
-        <h2>Skills & tools</h2>
-        <p class="section-intro">Only list a skill as “hands-on” when you can explain and demonstrate it. Update this section as you complete each lab.</p>
+        <h2>Technical Skills &amp; Tools</h2>
+        <p class="section-intro">Technical competencies verified through professional roles, university degree coursework, and hands-on laboratory setups.</p>
         <div class="card">
-          <span class="tag">TCP/IP fundamentals</span><span class="tag">OSI model</span><span class="tag">DNS / HTTP / TLS basics</span>
-          <span class="tag">Linux command line</span><span class="tag">Windows basics</span><span class="tag">Log analysis</span>
-          <span class="tag">Wazuh (lab practice)</span><span class="tag">Sigma (rule experiments)</span><span class="tag">Docker</span>
-          <span class="tag">Python fundamentals</span><span class="tag">Vulnerability assessment concepts</span>
+          <p><strong>SIEM, Log &amp; Traffic Analysis:</strong></p>
+          <span class="tag">Splunk</span><span class="tag">ELK Stack (Elasticsearch, Logstash, Kibana)</span><span class="tag">Wazuh SIEM</span><span class="tag">Wireshark</span><span class="tag">Sysmon</span><span class="tag">Windows Event Logs</span><span class="tag">Linux Syslog</span>
+
+          <p style="margin-top: 16px;"><strong>Cyber Security, Detection &amp; VAPT:</strong></p>
+          <span class="tag">Vulnerability Assessment</span><span class="tag">Metasploit</span><span class="tag">Sigma Detection Rules</span><span class="tag">Incident Triage</span><span class="tag">Threat Identification</span><span class="tag">IAM Fundamentals</span><span class="tag">Firewall Concepts</span>
+
+          <p style="margin-top: 16px;"><strong>Networking &amp; Infrastructure:</strong></p>
+          <span class="tag">Cisco Packet Tracer</span><span class="tag">Routers &amp; Switches Configuration</span><span class="tag">TCP/IP &amp; OSI Models</span><span class="tag">VLANs &amp; Inter-VLAN Routing</span><span class="tag">ACLs (Access Control Lists)</span><span class="tag">Subnetting (CIDR/VLSM)</span><span class="tag">DHCP / DNS / HTTP / TLS</span>
+
+          <p style="margin-top: 16px;"><strong>Programming, Data &amp; AI/ML:</strong></p>
+          <span class="tag">Python (Scripting &amp; Data Analysis)</span><span class="tag">PyTorch / Deep Learning</span><span class="tag">Autoencoders (Anomaly Detection)</span><span class="tag">Linux Shell / Bash</span><span class="tag">PowerShell / WMI / CIM</span><span class="tag">DBMS / SQL</span><span class="tag">Docker</span>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS & LABS SECTION -->
     <section id="projects">
       <div class="wrap">
-        <h2>Projects & labs</h2>
-        <p class="section-intro">These are starter project descriptions. Change each status and add screenshots, commands, logs, and results only after you have verified them.</p>
+        <h2>Projects &amp; Practical Labs</h2>
+        <p class="section-intro">Hands-on cybersecurity laboratories, network architectures, and machine-learning threat detection models.</p>
         <div class="grid">
+
+          <!-- PROJECT 1: WAZUH LOG MONITORING LAB (Retained) -->
           <article class="card">
-            <div class="status">Lab project • Update status</div>
+            <div class="status">Lab project &bull; Controlled Environment</div>
             <h3>1. Wazuh Log Monitoring Lab</h3>
             <p><strong>Objective:</strong> Practice collecting host/application logs and checking whether events appear in a SIEM dashboard.</p>
             <p><strong>Tools:</strong> Wazuh, Ubuntu, application logs.</p>
             <p><strong>Evidence to add:</strong> Agent status, log-source configuration, a harmless test log entry, dashboard event or troubleshooting output.</p>
             <p><strong>Learning:</strong> Log collection, agent connectivity, and basic event investigation.</p>
-            <span class="tag">SOC</span><span class="tag">SIEM</span><span class="tag">Logs</span>
+            <span class="tag">SOC</span><span class="tag">SIEM</span><span class="tag">Wazuh</span><span class="tag">Logs</span>
           </article>
+
+          <!-- PROJECT 2: SIGMA DETECTION RULE EXPERIMENTS (Retained) -->
           <article class="card">
-            <div class="status">Lab project • Update status</div>
+            <div class="status">Lab project &bull; Detection Engineering</div>
             <h3>2. Sigma Detection Rule Experiments</h3>
             <p><strong>Objective:</strong> Understand the structure of Sigma rules and investigate whether a rule can be converted to a supported backend.</p>
             <p><strong>Tools:</strong> Sigma YAML rules and a test environment.</p>
             <p><strong>Evidence to add:</strong> Rule YAML, validation output, conversion result, and any compatibility issue encountered.</p>
             <p><strong>Learning:</strong> Detection logic, rule fields, and backend compatibility.</p>
-            <span class="tag">Detection engineering</span><span class="tag">Sigma</span>
+            <span class="tag">Detection engineering</span><span class="tag">Sigma</span><span class="tag">Threat Detection</span>
           </article>
+
+          <!-- PROJECT 3: RAILS SECURITY LOGGING LAB (Retained) -->
           <article class="card">
-            <div class="status">Controlled lab • Update status</div>
+            <div class="status">Controlled lab &bull; Application Security</div>
             <h3>3. Rails Security Logging Lab</h3>
             <p><strong>Objective:</strong> Observe application logs during controlled security tests in an isolated local lab.</p>
             <p><strong>Tools:</strong> Docker, Ruby on Rails, application logs, monitoring tools.</p>
             <p><strong>Evidence to add:</strong> Lab architecture, test authorization/scope, harmless test request, resulting log line, and analysis.</p>
             <p><strong>Safety:</strong> Keep testing local and authorized; do not expose a vulnerable service publicly.</p>
-            <span class="tag">Application security</span><span class="tag">Docker</span>
+            <span class="tag">Application security</span><span class="tag">Docker</span><span class="tag">Log Auditing</span>
           </article>
+
+          <!-- PROJECT 4: AI-BASED WINDOWS ANOMALY DETECTION (Status: COMPLETED) -->
           <article class="card">
-            <div class="status">Research project • In progress if applicable</div>
+            <div class="status completed">Completed Research Lab &bull; 100% Detection Rate</div>
             <h3>4. AI-Based Windows Anomaly Detection</h3>
-            <p><strong>Objective:</strong> Reproduce the methods described in the EI 2020 research paper using the paper's stated data and model details.</p>
-            <p><strong>Tools:</strong> Python, Jupyter Notebook, NumPy, and the research dataset.</p>
-            <p><strong>Evidence to add:</strong> Dataset source, preprocessing steps, model architecture, training settings, and results compared with the paper.</p>
-            <p><strong>Important:</strong> Clearly label any reproduction gap; do not claim paper-level reproduction until the method and results are verified.</p>
-            <span class="tag">Python</span><span class="tag">Autoencoder</span><span class="tag">Research</span>
+            <p><strong>Objective:</strong> Reproduce the methods described in the <em>Yüksel, Schwarz &amp; Creutzburg (EI 2020)</em> research paper using 131-feature Windows process telemetry and deep autoencoder models.</p>
+            <p><strong>Tools:</strong> Python, PyTorch, Jupyter Notebook, NumPy, Matplotlib, Windows WMI/CIM, PowerShell.</p>
+            <p><strong>Results &amp; Verification:</strong> Successfully evaluated 5 neural network autoencoders with Sigmoid activations. Reconstructed normal process baseline with optimal topology (Test Net 5). Calibrated operational threshold (&mu; + 3.5&sigma;) achieving <strong>100.0% cyberattack detection</strong> across WannaCry Ransomware, NanoCore RAT, Zeus Banking Trojan, and Emotet with <strong>0 false positives</strong>.</p>
+            <p><strong>Learning:</strong> Unsupervised anomaly detection, latent bottleneck compression, Hazard Index formulation, and behavioral threat deflection.</p>
+            <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Autoencoder</span><span class="tag">Threat Detection</span><span class="tag">Research</span>
           </article>
+
+          <!-- PROJECT 5: CAMPUS NETWORK DESIGN & SECURITY (Added from Resume) -->
+          <article class="card" style="grid-column: span 2;">
+            <div class="status completed">Completed Project &bull; Cisco Packet Tracer</div>
+            <h3>5. Campus Network Design &amp; Security</h3>
+            <p><strong>Objective:</strong> Design and simulate a secure, hierarchical campus-wide network connecting multiple academic departments and administrative buildings with rigorous segmentation, routing, and access control.</p>
+            <p><strong>Tools:</strong> Cisco Packet Tracer, Cisco 2960 Switches, Cisco 2911 Routers, VLANs, ACLs, WLAN.</p>
+            <p><strong>Implementation Details:</strong></p>
+            <ul>
+              <li><strong>Hierarchical Architecture:</strong> Structured 3-tier model (Core, Distribution, and Access layers) ensuring high availability, scalability, and simplified troubleshooting.</li>
+              <li><strong>VLAN Segmentation:</strong> Isolated sensitive administrative, faculty, laboratory, and guest subnets to contain broadcast traffic and block lateral threat movement.</li>
+              <li><strong>Inter-VLAN Routing &amp; ACL Security:</strong> Configured Router-on-a-Stick with standard and extended Access Control Lists (ACLs) to enforce boundary policies and restrict unauthorized cross-department traffic.</li>
+              <li><strong>IP Addressing Schema:</strong> Applied VLSM (Variable Length Subnet Masking) for optimal IPv4 address allocation and DHCP services for automated client onboarding.</li>
+              <li><strong>Wireless Security:</strong> Integrated WPA2-Enterprise wireless access points for secure mobile connectivity across departments.</li>
+            </ul>
+            <p><strong>Learning:</strong> Enterprise network topology design, packet-flow analysis, boundary filtering, and defense-in-depth network security controls.</p>
+            <span class="tag">Cisco Packet Tracer</span><span class="tag">Network Security</span><span class="tag">VLANs</span><span class="tag">Routing &amp; Switching</span><span class="tag">ACLs</span><span class="tag">Subnetting</span>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section id="learning">
+    <!-- EDUCATION & CERTIFICATIONS (FROM RESUME) -->
+    <section id="education">
       <div class="wrap">
-        <h2>Learning roadmap</h2>
+        <h2>Education &amp; Certifications</h2>
+        <p class="section-intro">Academic qualifications and professional industry credentials.</p>
         <div class="grid">
-          <div class="card"><h3>01 — Networking</h3><p>Practice IP addressing, ports, DNS, TCP/UDP, HTTP/HTTPS, routing, and packet troubleshooting.</p></div>
-          <div class="card"><h3>02 — SOC fundamentals</h3><p>Read logs, identify timestamps and source systems, triage alerts, and write concise incident notes.</p></div>
-          <div class="card"><h3>03 — Detection & VAPT</h3><p>Learn detection-rule structure and perform authorized scans/tests in intentionally vulnerable local labs.</p></div>
-          <div class="card"><h3>04 — Document evidence</h3><p>For every project, record the goal, setup, exact steps, expected result, observed result, screenshots, and limitations.</p></div>
+          <div class="card">
+            <h3>Education</h3>
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 16px;">
+                <div style="font-weight: 700; color: var(--text);">Master of Computer Applications (MCA)</div>
+                <div style="color: var(--accent); font-size: 0.9rem;">Himachal Pradesh Technical University, Hamirpur &bull; 2022 – 2024</div>
+                <p style="margin: 4px 0 0; font-size: 0.88rem;">Advanced computer applications, computer networks, database systems, software engineering, and security.</p>
+              </li>
+              <li>
+                <div style="font-weight: 700; color: var(--text);">Bachelor of Science (B.Sc.)</div>
+                <div style="color: var(--accent); font-size: 0.9rem;">Himachal Pradesh University, Shimla &bull; 2019 – 2022</div>
+                <p style="margin: 4px 0 0; font-size: 0.88rem;">Science and foundational computing principles, mathematics, and analytical problem-solving.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Certifications &amp; Training</h3>
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 16px;">
+                <div style="font-weight: 700; color: var(--text);">Cyber Security – SOC and SIEM (Splunk &amp; ELK) for Beginners</div>
+                <div style="color: var(--accent); font-size: 0.9rem;">Udemy &bull; Feb 2025 (32 Hours Intensive)</div>
+                <p style="margin: 4px 0 0; font-size: 0.88rem;">SIEM architecture, log ingestion, search queries, dashboard building, alert tuning, and incident monitoring.</p>
+              </li>
+              <li style="margin-bottom: 16px;">
+                <div style="font-weight: 700; color: var(--text);">Cybersecurity Analyst Job Simulation</div>
+                <div style="color: var(--accent); font-size: 0.9rem;">Forage &bull; Jan 2025</div>
+                <p style="margin: 4px 0 0; font-size: 0.88rem;">Identity &amp; Access Management (IAM) fundamentals, strategy assessment, and access control governance.</p>
+              </li>
+              <li>
+                <div style="font-weight: 700; color: var(--text);">Internet of Things (IoT)</div>
+                <div style="color: var(--accent); font-size: 0.9rem;">Department of Science and Technology (DST)</div>
+                <p style="margin: 4px 0 0; font-size: 0.88rem;">Connected devices, IoT protocols, sensor communications, and networked device security.</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
+  <!DOCTYPE html>
     <section id="contact">
       <div class="wrap">
-        <h2>Contact</h2>
-        <p>Replace the example links below with your real professional profiles. Do not publish private phone numbers or personal details unless you want them public.</p>
+        <h2>Contact &amp; Connect</h2>
+        <p class="section-intro">I am open to full-time opportunities, internships, and collaborations in SOC Operations, Network Security, and Threat Detection. Feel free to connect or drop me an email.</p>
         <div class="contact">
-          <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub profile</a>
-          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn profile</a>
-          <a class="btn" href="mailto:your.email@example.com">Email me</a>
+          <a class="btn primary" href="mailto:hiteshbhardwaj3003@gmail.com">✉️ Email: hiteshbhardwaj3003@gmail.com</a>
+          <a class="btn secondary" href="https://linkedin.com/in/hitesh-bhardwaj-29bb89161" target="_blank" rel="noreferrer">🔗 LinkedIn Profile</a>
+          <a class="btn secondary" href="https://github.com/hitesh-gen21" target="_blank" rel="noreferrer">💻 GitHub: hitesh-gen21</a>
         </div>
       </div>
     </section>
   </main>
-  <footer><div class="wrap">© <span id="year"></span> YOUR NAME · Built for learning and professional project documentation.</div></footer>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      &copy; <span id="year"></span> <strong>Hitesh Kumar</strong> &bull; Cybersecurity &amp; SOC Analyst Portfolio &bull; Built with clean, accessible, modern web standards.
+    </div>
+  </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
